@@ -256,8 +256,18 @@ int main()
 
     do
     {
-        cout << "Digite o tamanho do vetor: ";
-        cin >> tamVetor;
+        do
+        {
+            cout << "Digite o tamanho do vetor: ";
+
+            if (!(cin >> tamVetor) || cin.peek() != '\n' || (tamVetor < 1)) {
+                VerificaCin();
+                opcaoValida = false;
+            } else{
+                opcaoValida = true;
+                system("cls");
+            }
+        } while (!opcaoValida);
 
         vector<int> arr(tamVetor);
 
@@ -294,8 +304,18 @@ int main()
             for (int i = 0; i < tamVetor; i++) arr[i] = dis(gen); // Aleatório
         }
 
-        cout << "Digite a quantidade de repeticoes: ";
-        cin >> repeticoes;
+        do
+        {
+            cout << "Digite a quantidade de repeticoes: ";
+
+            if (!(cin >> repeticoes) || cin.peek() != '\n' || (repeticoes < 1)) {
+                VerificaCin();
+                opcaoValida = false;
+            } else{
+                opcaoValida = true;
+                system("cls");
+            }
+        } while (!opcaoValida);
 
         // Escolha algoritmo de ordenação
         do
